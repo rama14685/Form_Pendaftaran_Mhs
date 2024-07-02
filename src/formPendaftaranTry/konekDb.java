@@ -11,7 +11,7 @@ import java.sql.*;
  */
 public class konekDb {
     String driverdbms = "com.mysql.cj.jdbc.Driver";
-    String database   = "jdbc:mysql://localhost/datadb";
+    String database   = "jdbc:mysql:8080//localhost/datadb";
     String user       = "root";
     String password   = "";
     

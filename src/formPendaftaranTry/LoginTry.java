@@ -23,6 +23,16 @@ public class LoginTry extends javax.swing.JFrame {
 
             String strsql = "SELECT * FROM user WHERE email ='" + email.getText() + "' and password ='" + pass.getText()+ "'";
             ResultSet rs = st.executeQuery(strsql);
+            
+            if (rs.next()){
+                // login berhasil, buka halaman pendaftaran
+                FormDaftarTry FormDaftarFrame = new FormDaftarTry();
+                FormDaftarFrame.setVisible(true);
+                this.dispose();
+            } else {
+                //login gagal, popUp Error notif
+                JOptionPane.showMessageDialog(this,"Email atau Password Salah!");
+            }
         }
         catch(SQLException e)
         {
@@ -218,7 +228,7 @@ public class LoginTry extends javax.swing.JFrame {
         // TODO add your handling code here:
         Login();
     }//GEN-LAST:event_loginActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
